@@ -1,0 +1,35 @@
+name: python-migration-rabi
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+    steps:
+    - name: clean workspace
+      shell: bash
+      run: rm -rf ${{ github.workspace }}/*
+    - name: checkout
+      uses: actions/checkout@v2
+#     # This item has no matching transformer
+#     - uses: com.microsoft.jenkins.appservice.WebAppDeploymentRecorder
+#       with:
+#         plugin: azure-app-service@1.0.2
+#         azureCredentialsId: 307e6f25-ab75-4559-bc70-fe6b72175aaf
+#         resourceGroup: GitHub-DevOps
+#         appName: pythonvaletapp
+#         filePath: "**/*.py,requirements.txt"
+#         sourceDirectory:
+#         targetDirectory:
+#         deployOnlyIfSuccessful: 'true'
+#         publishType: file
+#         dockerImageName:
+#         dockerImageTag:
+#         dockerFilePath: "**/Dockerfile"
+#         dockerRegistryEndpoint:
+#           plugin: docker-commons@1.17
+#         deleteTempImage: 'true'
+#         skipDockerBuild: 'false'
+#         slotName:
